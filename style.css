@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#body {
+    /* min-height: 100vh; */
+    /* min-width: 100vw; */
+    height: 99vh;
+    width: 99vw;
+    display: flex;
+    flex-direction: column;
+
+    
+}
+
+#headingContainer {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-right: 5em; */
+}
+
+#heading {
+    color: tomato;
+    font-size: 4em;
+    font-style: italic;
+}
+
+#searchForm {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+#searchField {
+    height: 80%;
+    width: 30%;
+    padding-left: 0.5em;
+    font-size: 2em;
+    font-family: 'Courier New', Courier, monospace;
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+
+
+}
+
+#searchButton {
+    height: 80%;
+    width: 8%;
+
+
+        /* auto  */
+    appearance: none;
+  background-color: #FFFFFF;
+  border-radius: 40em;
+  border-style: none;
+  box-shadow: #ADCFFF 0 -12px 6px inset;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -.24px;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.3rem;
+  quotes: auto;
+  text-align: center;
+  text-decoration: none;
+  transition: all .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  /* auto  */
+}
+
+#searchButton:hover {
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
+
+
+
+    background-color: #FFC229;
+    box-shadow: #FF6314 0 -6px 8px inset;
+    transform: scale(1.125);
+}
+
+#searchButton:active {
+    transform: scale(1.025);
+}
+
+#jsDivContainer {
+    /* border: solid 2px red; */
+    height: 63vh;
+    width: 99vw;
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5em;
+}
+
+
+.imageContainer {
+    /* border: solid 2px red; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 60%; */
+    /* width: 26%; */
+    /* height: 4rem; */
+    /* width: 4rem; */
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+
+}
+
+.image {
+    /* this is the "img tag"  */
+    height: 20em;
+
+    /* height: 500px; */
+    /* width: 100px; */
+    width: 20em;
+    cursor: zoom-in;
+
+
+}
+
+.image:hover {
+    filter: brightness(120%);
+    /* scale: 1.5; */
+    transform: scale(1.5);
+    transition-duration: 1s;
+
+
+}
+
+.removeButton {
+    height: 100px;
+    width: 100px;
+    background-color: cyan;
+
+}
+
+.captionDiv {
+    height: 100%;
+    width: 20em;
+    /* border: solid 2px red; */
+    margin-top: -3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.imageCaption {
+    /* border: solid 2px red; */
+    /* margin-top: -2.5em; */
+    font-size: 1.2em;
+    font-style: italic;
+    font-weight: 700;
+    color: black;
+    /* color: ; */
+
+
+    /* use positions to make the caption a layer above the image so when we hover on the image the caption can still be read. */
+
+}
+
+
+#showMoreButton {
+    /* opacity: 1; */
+    width: 10%;
+    align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+
+#showMoreButton:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+#showMoreButton:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+#showMoreButton:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+
+
