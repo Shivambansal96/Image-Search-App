@@ -149,7 +149,11 @@
 .removeButton {
     height: 100px;
     width: 100px;
-    background-color: cyan;
+    background-color: cyan; 
+    border: solid 2px red;
+    font-size: 2em;
+    color: red;
+
 
 }
 
@@ -184,6 +188,7 @@
 #showMoreButton {
     /* opacity: 1; */
     width: 10%;
+
     align-items: center;
   appearance: none;
   background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
@@ -202,7 +207,9 @@
   overflow: hidden;
   padding-left: 16px;
   padding-right: 16px;
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  left: 50vw;
   text-align: left;
   text-decoration: none;
   transition: box-shadow .15s,transform .15s;

@@ -1,5 +1,5 @@
 const DivContainer = document.querySelector("#jsDivContainer");
-const showMoreBUtton = document.querySelector("#showMoreBUtton");
+const showMoreBUtton = document.querySelector("#showMoreButton");
 
 showMoreButton.style.display = "none";
 
@@ -29,6 +29,7 @@ function searchButtonHandler(event) {
     response.then(res => res.json())    
     .then(data => {
 
+        console.log(data);
         for(let i = 0; i < 10; i++) {
 
             const imageContainer = document.createElement("div");
@@ -69,17 +70,17 @@ function searchButtonHandler(event) {
 
     // TRY TO FIGURE THIS OUT.. on clicking the image it gets scaled to 2 but we need to create a remove button to remove the image from the screen or something.
 
-            // imageTag.addEventListener("click", () => {
-            //     imageContainer.style.overflow = "visible";
-            //     imageTag.style.transform = "scale(2)";
+            imageTag.addEventListener("click", () => {
+                imageContainer.style.overflow = "visible";
+                imageTag.style.transform = "scale(2)";
 
-            //     const removeImage = createElement("button")
-            //     removeImage.classList.add("removeButton")
+                const removeImage = createElement("button")
+                removeImage.innerText = "Click ME!";
 
-            //     image.appendChild(removeImage);
+                removeImage.classList.add("removeButton")
+                image.appendChild(removeImage);
 
-
-            // })
+            })
 
 
     // TRY TO FIGURE THIS OUT.. on clicking the image it gets scaled to 2 but we need to create a remove button to remove the image from the screen or something.
@@ -100,7 +101,7 @@ function searchButtonHandler(event) {
 }
 
 
-
+showMoreBUtton.addEventListener("click", searchButtonHandler);
 
 
 searchButton.addEventListener("click", searchButtonHandler);
