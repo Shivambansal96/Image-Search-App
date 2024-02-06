@@ -1,5 +1,6 @@
 const DivContainer = document.querySelector("#jsDivContainer");
-const showMoreBUtton = document.querySelector("#showMoreButton");
+
+const showMoreButton = document.querySelector("#showMoreButton");
 
 showMoreButton.style.display = "none";
 
@@ -10,24 +11,35 @@ const searchField = document.querySelector("#searchField");
 
 // console.log(searchForm);
 
+// var baseUrl = `https://api.unsplash.com/search/photos?page=${pageNumber}&query=${searchField.value}`;
 
-// var baseUrl = `https://api.unsplash.com/search/photos?page=${pageNumber}&query=${searchField}`;
 
 
-function searchButtonHandler(event) {
+
+// https://api.unsplash.com/search/photos?page=1&query=naruto&client_id=RZEIOVfPhS7vMLkFdd2TSKGFBS4o9_FmcV1Nje3FSjw
+
+let page = 0;
+
+ async function searchButtonHandler(event) {
     // stops the page from refreshing
     event.preventDefault()
 
-    let baseUrl = "https://api.unsplash.com/photos/?client_id=6Utc3-o98q4N_LJyvNVUW62YAA5zCnT9okUlUV4NW3o&query="
+    const key = "6Utc3-o98q4N_LJyvNVUW62YAA5zCnT9okUlUV4NW3o";
 
-    // change the link... link is wrong 
+    page++;
 
-    const searchValue = searchField.value;
-    baseUrl += searchValue;
+    let baseUrl = `https://api.unsplash.com/search/photos?page=${page}&query=${searchField.value}&client_id=${key}`;
 
-    const response = fetch(baseUrl);
-    response.then(res => res.json())    
-    .then(data => {
+
+    // let pageNumber = 1;
+
+
+    const response =  await fetch(baseUrl);
+
+    const data = await response.json();
+
+
+        // console.log(baseUrl);
 
         console.log(data);
         for(let i = 0; i < 10; i++) {
@@ -39,10 +51,12 @@ function searchButtonHandler(event) {
             
             // console.log(imageCaption); 
 
-            const image = data[i].urls.small;
+            const image = data.results[i].urls.raw;
             imageTag.src = image;
 
-            imageCaption.innerText = data[i].alt_description;
+            // console.log(image);
+
+            imageCaption.innerText = data.results[i].alt_description;
             console.log(imageContainer);
 
 
@@ -60,8 +74,8 @@ function searchButtonHandler(event) {
             imageContainer.append(imageTag,captionDiv, imageCaption)
             captionDiv.appendChild(imageCaption)
 
-            // imageCaption.style.color = randomColor();
-            imageCaption.style.color = "cyan";
+            imageCaption.style.color = randomColor();
+            // imageCaption.style.color = "white";
             // captionDiv.style.width = "20em";
 
 
@@ -70,17 +84,17 @@ function searchButtonHandler(event) {
 
     // TRY TO FIGURE THIS OUT.. on clicking the image it gets scaled to 2 but we need to create a remove button to remove the image from the screen or something.
 
-            imageTag.addEventListener("click", () => {
-                imageContainer.style.overflow = "visible";
-                imageTag.style.transform = "scale(2)";
+            // imageTag.addEventListener("click", () => {
+            //     imageContainer.style.overflow = "visible";
+            //     imageTag.style.transform = "scale(2)";
 
-                const removeImage = createElement("button")
-                removeImage.innerText = "Click ME!";
+            //     const removeImage = createElement("button")
+            //     removeImage.innerText = "Click ME!";
 
-                removeImage.classList.add("removeButton")
-                image.appendChild(removeImage);
+            //     removeImage.classList.add("removeButton")
+            //     image.appendChild(removeImage);
 
-            })
+            // })
 
 
     // TRY TO FIGURE THIS OUT.. on clicking the image it gets scaled to 2 but we need to create a remove button to remove the image from the screen or something.
@@ -88,20 +102,23 @@ function searchButtonHandler(event) {
 
         }
 
+        showMoreButton.style.display = "block";
 
-    })
+
+
+    }
 
         // console.log(baseUrl);
-        showMoreButton.style.display = "block";
         heading.style.color = randomColor();
 
     // searchValue.innerHTML = "";
 
     // console.log(searchValue);
-}
 
 
-showMoreBUtton.addEventListener("click", searchButtonHandler);
+
+showMoreButton.addEventListener("click", searchButtonHandler);
+    // pageNumber++;
 
 
 searchButton.addEventListener("click", searchButtonHandler);
