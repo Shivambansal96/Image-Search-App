@@ -105,7 +105,7 @@
 
 #jsDivContainer {
     /* border: solid 2px black; */
-    height: 63vh;
+    /* height: 63vh; */
     width: 99vw;
     margin-top: 2em;
     display: flex;
@@ -249,8 +249,9 @@
 } */
 
 #buttonContainer {
-    border: solid 2px red;
+    /* border: solid 2px red; */
     /* height: 200px; */
+    margin-top: 1em;
     display: flex;
     justify-content: center;
 }
