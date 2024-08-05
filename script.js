@@ -24,7 +24,9 @@ let page = 0;
     // stops the page from refreshing
     event.preventDefault()
 
-    const key = "6Utc3-o98q4N_LJyvNVUW62YAA5zCnT9okUlUV4NW3o";
+    // const key = "6Utc3-o98q4N_LJyvNVUW62YAA5zCnT9okUlUV4NW3o";
+
+  const key = "USRiN8YnZegtjFr1O6zz_uFj67pemWeI1GdCPVLb3Nc";
 
     page++;
 
